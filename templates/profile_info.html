@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <form action="{{ url_for('profile_info') }}" method="POST">
+    <h2>Profile Information</h2>
+    <div class="profile_info">
+      <p>
+        <strong>Full Name:</strong> {{ user.full_name }}
+      </p>
+      <p>
+        <strong>Username:</strong> {{ user.username }}
+      </p>
+      <p>
+        <strong>Account Number:</strong> {{ user.account_number }}
+      </p>
+      <p>
+        <strong>Id/Passport/Military No:</strong> {{ user.id_number }}
+      </p>
+      <p>
+        <strong>Email Address:</strong> {{ user.email }}
+      </p>
+      <p>
+        <strong>Address No:</strong> {{ user.address }}
+      </p>
+      <p>
+        <strong>Phone No:</strong> {{ user.phone_number }}
+      </p>
+      <p>
+        <strong>Balance:</strong> {{ user.balance }}
+      </p>
+    </div>
+  </form>
+  <div class="actions">
+    <a href="{{ url_for('home') }}" class="btn">Back to Home</a>
+  </div>
+</div>
+{% endblock %}

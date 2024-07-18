@@ -1,0 +1,26 @@
+<!-- templates/login.html -->
+
+{% extends "base.html" %}
+
+{% block content %} 
+   <div class="container">
+
+    <h2>Login To Pivon-Tech Bank</h2>
+    <form method="POST" action="{{url_for ('login')}}">
+      <div class="form-group">
+         <label for="username">Username</label>
+        <input type="text" name="username" id="username" required/>
+      </div>
+     <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required />
+     </div>
+     
+      <button type="submit">Login</button>
+      {% if message %} 
+        <p class="error">{{message}} </p>
+      {% endif %}
+    </form>
+    <p>Don't have an account? <a href="{{url_for('register')}}" >Register Here</a></p>   
+   </div>
+{% endblock %} 

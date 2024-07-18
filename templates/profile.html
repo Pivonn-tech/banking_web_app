@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h2>Profile Information</h2>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  <ul>
+    {% for category, message in messages %}
+    <li class="{{ category }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}
+  <form method="POST" action="{{ url_for('profile') }}">
+    <div class="form-group">
+      <label for="full_name">Full Name</label>
+      <input type="text" id="full_name" name="full_name">
+    </div>
+    <div class="form-group">
+      <label for="id_number">Id/Passport/Military No. </label>
+      <input type="number" name="id_number" id="id_number" />
+  </div>
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email">
+  </div>
+  <div class="form-group">
+    <label for="address">Address No.</label>
+    <input type="text" id="address" name="address">
+  </div>
+  <div class="form-group">
+    <label for="phone_number">Phone No.</label>
+    <input type="number" id="phone_number" name="phone_number">
+  </div>
+  <button type="submit">Update Profile</button>
+</form>
+<div class="actions">
+  <a href="{{ url_for('home') }}" class="btn">Back to Home</a>
+</div>
+</div>
+{% endblock %}

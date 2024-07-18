@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+    <div class="container">
+        <h2>Manage Account</h2>
+        <form method="post">
+        <div class="actions">
+            <a href="{{ url_for('profile_info') }}" class="btn">Profile Infomation</a>
+        </div>
+           <!--  <button type="submit" name="action" value="profile_info" class="btn">Profile Infomation </button> -->
+            <button type="submit" name="action" value="change_password" class="btn">Change Password</button>
+            <button type="submit" name="action" value="profile" class="btn">Update Profile Info</button>
+            <button type="submit" name="action" value="delete_account" class="btn">Delete Account</button>
+        </form>
+        <div class="actions">
+            <a href="{{ url_for('home') }}" class="btn">Back</a>
+        </div>
+    </div>
+
+{% endblock %}

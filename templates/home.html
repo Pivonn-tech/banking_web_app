@@ -1,0 +1,19 @@
+<!-- templates/home.html -->
+
+{% extends "base.html" %} 
+
+{% block content %} 
+    <div class="container">
+        <h2>Welcome, {{ user.username }}</h2>
+        <p class="account-info">Account Number:<br /> <span>{{ user.account_number }}</span></span>
+        <p class="account-info">Account Balance:<br /> <span>KES {{ user.balance }}</span></span>
+        <div class="actions">
+            <a href="{{ url_for('deposit') }}" class="btn">Deposit Money</a>
+            <a href="{{ url_for('withdraw') }}" class="btn">Withdraw Money</a>
+            <a href="{{ url_for('transfer') }}" class="btn">Transfer Money</a>
+            <a href="{{ url_for('transaction_history') }}" class="btn">Transaction History</a>
+            <a href="{{ url_for('manage_account') }}" class="btn">Manage Acocount</a>
+            <a href="{{ url_for('logout') }}" class="btn logout">Logout</a>
+        </div>
+    </div>
+{% endblock %} 

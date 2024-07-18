@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banking App</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <style>
+    .hidden {
+      display: none;
+     }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      <div class="alert-container">
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+          {{ message }}
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% endwith %}
+      {% block content %}{% endblock %}
+      <script>
+        // Function to hide flash messages after a delay
+        setTimeout(function() {
+          const flashes = document.querySelectorAll('.flash');
+          flashes.forEach(function(flash) {
+            flash.classList.add('hidden');
+          });
+        }, 5000); // 5000 milliseconds = 5 seconds
+      </script>
+    </div>
+  </body>
+</html>

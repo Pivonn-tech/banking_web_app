@@ -1,0 +1,44 @@
+<!-- templates/register.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Register an Account to Pivon-Tech Bank</h2>
+    <form action="{{ url_for('register') }}" method="POST">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" required />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required />
+        </div>
+        <div class="form-group">
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" name="confirm_password" id="confirm_password" required />
+        </div>
+                <div class="form-group">
+            <label for="full_name">Full Name</label>
+            <input type="text" id="full_name" name="full_name" required >
+        </div>
+        <div class="form-group">
+          <label for="id_number">Id/Passport/Military No. </label>
+          <input type="number" name="id_number" id="id_number" required />
+        </div>
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required >
+        </div>
+        <div class="form-group">
+            <label for="address">Address No.</label>
+            <input type="text" id="address" name="address">
+        </div>
+        <div class="form-group">
+            <label for="phone_number">Phone No.</label>
+            <input type="number" id="phone_number" name="phone_number">
+        </div>
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login Here</a></p>
+</div>
+{% endblock %}

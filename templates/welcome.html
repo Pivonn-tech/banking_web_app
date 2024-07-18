@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Pivon-Tech Bank</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="welcome-body">
+    <div class="welcome-overlay"></div>
+    <div class="welcome-content">
+        <div class="welcome-header">
+            <h1>Welcome to Pivon-Tech Bank</h1>
+            <p>Your trusted partner in financial success</p>
+        </div>
+        <div class="welcome-buttons">
+            <a href="{{ url_for('register') }}" class="btn-welcome">Register</a>
+            <a href="{{ url_for('login') }}" class="btn-welcome">Login</a>
+            <a href="{{ url_for('terms') }}" class="btn-welcome">Terms and Conditions</a>
+            <a href="{{ url_for('investors') }}" class="btn-welcome">Investors</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Delete Account</h2>
+        <p>Are you sure you want to delete your account? This action cannot be undone.</p>
+        <form method="post">
+            <button type="submit" class="btn">Delete Account</button>
+        </form>
+        <div class="actions">
+            <a href="{{ url_for('manage_account') }}" class="btn">Back to Manage Account</a>
+        </div>
+    </div>
+</body>
+</html>
