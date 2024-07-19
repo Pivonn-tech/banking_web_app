@@ -15,3 +15,5 @@ SQLAlchemy==2.0.31
 typing_extensions==4.12.2
 virtualenv==20.26.3
 Werkzeug==3.0.3
+pyscopg2-binary
+gunicorn

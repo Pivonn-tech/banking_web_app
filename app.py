@@ -5,12 +5,15 @@ from datetime import datetime
 from io import StringIO
 import random
 import csv
+import os
+
 
 
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'pivon'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///banking_system.db'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///banking_system.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('postgresql://postgres.pxqefqdyxdidsvmgobel:Bd*XyZk8*JqE..n@aws-0-us-east-1.pooler.supabase.com:6543/postgres', 'sqlite:///default.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
